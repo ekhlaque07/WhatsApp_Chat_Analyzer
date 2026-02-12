@@ -41,7 +41,7 @@ def most_busy_users(df):
 
 def create_wordcloud(selected_user,df):
 
-    f = open('C:/Users/Ekhlaque/Desktop/WhatsApp_Message_Analyzer/stop_hinglish.txt', 'r')
+    f = open('stop_hinglish.txt', 'r')
     stop_words = f.read()
 
     if selected_user != 'Overall':
@@ -66,7 +66,7 @@ def create_wordcloud(selected_user,df):
 
 def most_common_words(selected_user,df):
 
-    f = open('C:/Users/Ekhlaque/Desktop/WhatsApp_Message_Analyzer/stop_hinglish.txt' ,'r' , encoding='utf-8')
+    f = open('stop_hinglish.txt' ,'r' , encoding='utf-8')
     stop_words = f.read()
 
     if selected_user != 'Overall':
@@ -148,6 +148,7 @@ def activity_heatmap(selected_user,df):
     user_heatmap = df.pivot_table(index='day_name', columns='hour', values='message', aggfunc='count').fillna(0)
 
     return user_heatmap
+
 
 
 
